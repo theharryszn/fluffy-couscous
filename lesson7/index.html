@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const fruits = ["Mango", "Grape", "Lemon", "Apple", "Pineapple", "Banana", "Guava", "Date", "ada", "Watermelon", "Strawberry", "Cherry"];
+
+        for(let index in fruits) {
+            console.log(index);
+        }
+
+        for(let fruit of fruits) {
+            console.log(fruit);
+        }
+
+        fruits.forEach(function (fruit){
+            console.log(fruit);
+        })
+
+        const modifiedFruits = fruits.map(function (fruit){
+            return fruit.toLowerCase()
+        })
+        console.log(fruits);
+        console.log(modifiedFruits);
+    </script>
+</body>
+</html>

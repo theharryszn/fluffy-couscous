@@ -1,0 +1,154 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calculator {
+            display: flex;
+            padding: 20px;
+            background-color: beige;
+            width: 400px;
+            margin: auto;
+            flex-direction: column;
+            border-radius: 10px;
+            box-shadow: 5px 5px  slategray;
+        }
+
+        .result {
+            width: 100%;
+            font-size: 2em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px 0px;
+            background-color: white;
+            box-shadow: 5px 5px  slategray;
+            text-align: right;
+        }
+
+        .buttons {
+           display: grid;
+           grid-template-columns: 1fr 1fr 1fr 1fr;
+           gap: 10px;
+        }
+
+        .btn {
+            padding: 20px;
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.2em;
+            box-shadow: 5px 5px  slategray;
+            transition: all .3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: rgb(184, 194, 204);
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div id="result" class="result">0</div>
+        <div class="buttons">
+            <button class="btn">.</button>
+            <button class="btn">0</button>
+            <button class="btn">1</button>
+            <button class="btn">2</button>
+            <button class="btn">3</button>
+            <button class="btn">4</button>
+            <button class="btn">5</button>
+            <button class="btn">6</button>
+            <button class="btn">7</button>
+            <button class="btn">8</button>
+            <button class="btn">9</button>
+            <button class="btn">-</button>
+            <button class="btn">=</button>
+            <button class="btn">+</button>
+            <button class="btn">*</button>
+            <button class="btn">Del</button>
+            <button class="btn">AC</button>
+            <button class="btn">/</button>
+        </div>
+    </div>
+    <script>
+        const resultBox = document.getElementById("result");
+
+        const buttons = document.getElementsByClassName("btn");
+
+        let fnum = null;
+        let snum = null;
+        let operator = null;
+
+        const check = (e) => {
+            switch(e.target.innerHTML){
+                case ".":
+                case "0":
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                case "8":
+                case "9":
+                    if(resultBox.innerHTML === "0"){
+                        resultBox.innerHTML = e.target.innerHTML;
+                    }else {
+                        resultBox.innerHTML = resultBox.innerHTML + e.target.innerHTML;
+                    }
+                    break;
+                case "+":
+                case "-":
+                case "*":
+                case "/":
+                    if(fnum == null){
+                        fnum = parseFloat(resultBox.innerHTML);
+                    }
+                    operator = e.target.innerHTML;
+                    break;
+                case "=":
+                    let result;
+                    switch(operator){
+                        case "+":
+                            result = fnum + parseFloat(resultBox.innerHTML);
+                            resultBox.innerHTML = result;
+                            break;
+                        case "/":
+                            result = fnum / parseFloat(resultBox.innerHTML);
+                            resultBox.innerHTML = result;
+                            break;
+                        case "*":
+                            result = fnum * parseFloat(resultBox.innerHTML);
+                            resultBox.innerHTML = result;
+                            break;
+                        case "-":
+                            result = fnum - parseFloat(resultBox.innerHTML);
+                            resultBox.innerHTML = result;
+                            break;
+                    }
+            }
+        }
+
+        for(let i = 0; i < buttons.length;i ++) {
+            buttons.item(i).addEventListener("click", (e) => {
+                check(e)
+            })
+        }
+
+    </script>
+</body>
+</html>

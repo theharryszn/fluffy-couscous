@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @font-face {
+            font-family: 'Monalisa';
+            src: url("./fonts/MonoLisa-Regular.woff2");
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family:'Monalisa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .countries {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            max-width: 40rem;
+            margin: auto;
+            padding-top: 50px;
+        }
+
+        .country {
+            background-color: goldenrod;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 5px 0px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="countries">
+    </ul>
+    <script>
+        // selecting the ul with the class
+       
+        // creating a array of countries
+        const countries = ["Japan", "South Korea", "Ukraine", "Norway", "russia", "Burundi", "Germany", "Estonia", "Sweden", "Hawaii", "Madagascar", "India", "Nigeria", "Hundras", "Hungary", "North Korea", "Zimbabwe", "Ghana", "Botswana", "Ethopia", "Jamaica", "Cuba", "Brazil"]
+        // looping 
+        for(let i = 0; i < countries.length; i++) {
+            // creating a li element
+            const listItem = document.createElement("li");
+            // setting the innerText of the li element to the country at the current position 
+            listItem.innerText = countries[i];
+            // adding class country to the li
+            listItem.classList.add("country");
+            // appending the li to the list 
+            list.appendChild(listItem)
+        }
+
+
+    </script>
+</body>
+</html>
