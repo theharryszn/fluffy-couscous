@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       @font-face {
+            font-family: 'Monalisa';
+            src: url("./fonts/MonoLisa-Regular.woff2");
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family:'Monalisa', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #16222A;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #3A6073, #16222A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .country {
+            background: rgba(255, 255, 255, 0.123);
+            backdrop-filter: blur( 4px );
+            -webkit-backdrop-filter: blur( 4px );
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+            border-radius: 5px;
+            padding: 10px;
+            transition: all .2s ease-in-out;
+            color: white;
+        }
+
+        .country img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            height: 200px;
+        }
+
+        .country:hover {
+            transform: scale(1.02);
+        }
+
+        .details {
+            padding: 10px;
+        }
+
+        .country .name {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .country .capital {
+            font-size: 0.8em;
+        }
+
+        .country .population {
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="country">
+            <img src="https://images.unsplash.com/flagged/photo-1579210504658-94fcc9cfa42f?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cndhbmRhfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=500" alt="image">
+            <div class="details">
+                <div class="name">Ghana</div>
+                <div class="capital">Capital: Accra</div>
+                <div class="population">Population: 12.4M</div>
+            </div>
+        </div> -->
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
