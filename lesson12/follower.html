@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            /* cursor: none; */
+        }
+
+        .circle {
+            border-radius: 50%;
+            background-color: crimson;
+            width: 25px;
+            height: 25px;
+            position: fixed;
+            /* transition: all .08s ease-in-out; */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const circles = []
+        for(let i = 1; i <= 5; i++) {
+            const circle = document.createElement("div");
+            circle.classList.add("circle")
+            circle.style.opacity = 1 / i; 
+            circle.style.transition = `all .${i}s ease-in-out`
+            document.body.appendChild(circle)
+            circles.push(circle);
+        } 
+
+        document.addEventListener("mousemove", (evt) => {
+            circles.forEach((circle, i) => {
+                circle.style.top = evt.clientY - 12.5;
+                circle.style.left = evt.clientX - 12.5;
+            })
+        })
+    </script>
+</body>
+</html>
