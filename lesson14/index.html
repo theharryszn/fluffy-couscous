@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        #counter {
+            position: fixed;
+            right: 0;
+            top: 0;
+            padding: 10px;
+        }
+
+        textarea {
+            width: 100vw;
+            height: 100vh;
+            padding: 15px;
+            font-size: 2rem;
+            background-color: cornsilk;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">0 Words</div>
+    <textarea name="textarea" id="textarea"></textarea>
+    <script>
+        const textarea =  document.getElementById("textarea")
+        const counter = document.getElementById("counter")
+
+        textarea.addEventListener("input", (e) => {
+            const text = textarea.value;
+            const words = text.split(" ");
+            counter.innerHTML = `${words.length} words`
+            
+            if(words.length > 12){
+                const twelveWords = words.slice(0,12)
+                textarea.value = twelveWords.join(" ");
+                counter.innerHTML = `${twelveWords.length} words`
+            }
+        })
+    </script>
+</body>
+</html>

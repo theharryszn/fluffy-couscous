@@ -16,4 +16,5 @@
 - Classes
 - Events
 - Async and Await
+- Error Handling
 - fetch api
