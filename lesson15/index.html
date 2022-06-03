@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // function toast() {
+        //     return new Promise((resolve, reject) => {
+        //         reject("An Error Occured")
+        //     })
+        // }
+
+        // try {
+        //     toast();
+        // }catch(err) {
+        //     console.log("There was an error ",err);
+        // }
+
+        // function throwError () {
+        //     const chase = new Error("Invalid Username")
+
+        //     // throw chase;
+        // }
+
+        try {
+
+            throw new Error("Something Happened")
+
+        }catch (err) {
+            console.log("Hi");
+            // console.log("There was an error: ",err.stack);
+        }finally {
+            console.log("Finished Running");
+        }
+
+
+
+    </script>
+</body>
+</html>
